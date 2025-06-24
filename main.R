@@ -43,12 +43,12 @@ output_dir <- here("ouput_files")
 
 ########## here to list all input files
 input_path <- list(
-  bracken_combined_select = here("input_files", "bracken_combine_select_2023_2024_stef_df_250124_woG230616_G230828.tsv"), #bracken_combined_select.tsv
+  bracken_combined_select = here("input_files", "bracken_combine_select_2023_2024.tsv"), #bracken_combined_select.tsv
   negative = here("input_files", "Microbiologically_negative.xlsx"),
   microbiology = here("input_files", "Access_TAPIR_250325.xlsx"),
   coverage = here("input_files", "bracken_plus_coverage_v6.csv"),
   biom_folder = here("input_files", "biom"),
-  tax_id = here("input_files", "taxid_from_cov_file_plus_manual108.xlsx")
+  tax_id = here("input_files", "taxid_from_cov_file.xlsx")
 )
 
 ########## here to list all output files

@@ -6,9 +6,9 @@
 **License Notice**
 
 This code is part of an unpublished manuscript and is currently under
-embargo.\
+embargo.
 Please do not redistribute. The code will be made publicly available
-upon article publication.\
+upon article publication.
 
 ## Description
 
@@ -97,14 +97,55 @@ comprehensive file (bacteria) by using taxonKit.
 
 <https://bioinf.shenwei.me/taxonkit/tutorial/>
 
+7. Microbiological reports 
+
+Contains the reports from positive growth species. In the context of this TAPIR project, the species grown on MacConkey agar plates were identified with MALDI-TOF. 
+
+| sample_ID | name             | 
+|-----------|------------------|
+| T251-3-A  | Escherichia coli |
+
+
 File structure
 
-The input files are:
+Stop-Check-Go_TAPIR/
+├── R/
+│   └── functions.R
+├── input_files/
+│   └── taxid_from_cov_file.xlsx
+│   └── Microbiologically_negative.xlsx
+│   └── bracken_plus_coverage_v6.csv
+│   └── bracken_combine_select_2023_2024.tsv
+│   └── Access_TAPIR_250325.xlsx
+│   └── biom
+         └── **
+├── README.md
+├── config.yaml
+├── .Rhistory
+├── outpu_files/
+│   └── Samples_system_raw.xlsx
+│   └── Samples_in_Stop_after_Check.xlsx
+│   └── Samples_in_Go_system.xlsx
+└── .gitignore
+
+
+
+** Note that the input files are:
 
 2.  Bracken_combine_select.tsv
 3.  Microbiologically_negative.xlsx
 4.  bracken_plus_coverage_v6.csv
 5.  bracken_kraken.biom
+6.  taxid_from_cov_file.xlsx
+7.  Access_TAPIR_250325.xlsx
 
-Files 2, 3, 4, and 5 are required for the script to work. File 6 is a fixed file. The location of these files should be`/$PATH/input_files/`. The script contains functions to process the biom format files from 5 by extracting the weeks of analysis and subsetting files 2, 3, and 4. The output files produced are Excel metadata files associated with the
+Files 2, 3, 4, 5 and 7 are required for the script to work. File 6 is a fixed file. The location of these files should be`/$PATH/input_files/`. The script contains functions to process the biom format files from 5 by extracting the weeks of analysis and subsetting files 2, 3, 4 and 7. The output files produced are Excel metadata files associated with the
 classification system ‘Samples_system_raw’, ‘Samples_in_Stop_after_Check’, ‘Samples_in_Go_after_Check’, and the phyloseq decontaminated objects saved as '.rds' in `/$PATH/output_files/biom_decontaminated/`
+
+* Disclaimer: Use of AI Assistance *
+
+I used assistance of ChatGPT (GPT-4o-mini model) for the code publication. The AI provided support based on the prompt:
+
+"I have a project in R with Git and now I need to push it for publication. Guide me in every step."
+
+While the AI’s suggestions helped with templates for publication and the version control processes, all final decisions, code implementations, and project content were written, reviewed and verified by the project author.
