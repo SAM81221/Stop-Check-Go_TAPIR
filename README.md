@@ -106,12 +106,5 @@ The input files are:
 4.  bracken_plus_coverage_v6.csv
 5.  bracken_kraken.biom
 
-Files 2, 3, 4, and 5 are required for the script to work. File 6 is a
-fixed file. The location of these files should be`/$PATH/input_files/`.
-The script contains functions to process the biom format files from 5 by
-extracting the weeks of analysis and subsetting files 2, 3, and 4. The
-output files produced are Excel metadata files associated with the
-classification system ‘Samples_system_raw’,
-‘Samples_in_Stop_after_Check’, ‘Samples_in_Go_after_Check’, and the
-phyloseq decontaminated objects saved as '.rds' in
-`/$PATH/output_files/biom_decontaminated/`
+Files 2, 3, 4, and 5 are required for the script to work. File 6 is a fixed file. The location of these files should be`/$PATH/input_files/`. The script contains functions to process the biom format files from 5 by extracting the weeks of analysis and subsetting files 2, 3, and 4. The output files produced are Excel metadata files associated with the
+classification system ‘Samples_system_raw’, ‘Samples_in_Stop_after_Check’, ‘Samples_in_Go_after_Check’, and the phyloseq decontaminated objects saved as '.rds' in `/$PATH/output_files/biom_decontaminated/`
