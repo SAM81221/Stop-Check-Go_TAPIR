@@ -107,8 +107,8 @@ Contains the reports from positive growth species. In the context of this TAPIR 
 
 
 * File structure *
-
-Stop-Check-Go_TAPIR/
+```
+Stop-Check-Go_TAPIR/ 
 ├── main.R
 ├── R/
 │ └── functions.R
@@ -128,6 +128,7 @@ Stop-Check-Go_TAPIR/
 ├── .Rhistory
 └── .gitignore
 
+```
 
 ** Note that the input files are:
 
