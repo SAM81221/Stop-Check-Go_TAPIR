@@ -1,0 +1,8 @@
+thresholds:
+  low_coverage_threshold: 20
+
+#optional - user input for definying contamination types/values
+#contamination_levels:
+ # cross_contamination: "Cross-contamination"
+#lib_contamination_10k: "Library-contamination-10K"
+#lib_contamination_1k: "Library-contamination-1K"
