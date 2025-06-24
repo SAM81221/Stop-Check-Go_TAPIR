@@ -106,28 +106,27 @@ Contains the reports from positive growth species. In the context of this TAPIR 
 | T251-3-A  | Escherichia coli |
 
 
-File structure
+* File structure *
 
 Stop-Check-Go_TAPIR/
+├── main.R
 ├── R/
-│   └── functions.R
+│ └── functions.R
 ├── input_files/
-│   └── taxid_from_cov_file.xlsx
-│   └── Microbiologically_negative.xlsx
-│   └── bracken_plus_coverage_v6.csv
-│   └── bracken_combine_select_2023_2024.tsv
-│   └── Access_TAPIR_250325.xlsx
-│   └── biom
-         └── **
+│ ├── taxid_from_cov_file.xlsx
+│ ├── Microbiologically_negative.xlsx
+│ ├── bracken_plus_coverage_v6.csv
+│ ├── bracken_combine_select_2023_2024.tsv
+│ ├── Access_TAPIR_250325.xlsx
+│ └── biom/
+├── output_files/
+│ ├── Samples_system_raw.xlsx
+│ ├── Samples_in_Stop_after_Check.xlsx
+│ └── Samples_in_Go_system.xlsx
 ├── README.md
 ├── config.yaml
 ├── .Rhistory
-├── outpu_files/
-│   └── Samples_system_raw.xlsx
-│   └── Samples_in_Stop_after_Check.xlsx
-│   └── Samples_in_Go_system.xlsx
 └── .gitignore
-
 
 
 ** Note that the input files are:
