@@ -1,7 +1,4 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
+
 ---
 
 # The TAPIR project
