@@ -144,7 +144,15 @@ Stop-Check-Go_TAPIR/
 Files 2, 3, 4, 5 and 7 are required for the script to work. File 6 is a fixed file. The location of these files should be`/$PATH/input_files/`. The script contains functions to process the biom format files from 5 by extracting the weeks of analysis and subsetting files 2, 3, 4 and 7. The output files produced are Excel metadata files associated with the
 classification system ‘Samples_system_raw’, ‘Samples_in_Stop_after_Check’, ‘Samples_in_Go_after_Check’, and the phyloseq decontaminated objects saved as '.rds' in `/$PATH/output_files/biom_decontaminated/`
 
-* Disclaimer: Use of AI Assistance *
+* Funding information
+  
+This work was funded by the Federal Ministry of Education and Research (BMBF) under grant number 01KI2018. Without their financial support, this research would not have been possible.
+
+* Acknowledgements
+
+The TAPIR (Tracking Acquisition of Pathogens In Real-time) team members.
+
+* Disclaimer: Use of AI Assistance 
 
 I used assistance of ChatGPT (GPT-4o-mini model) for the code publication. The AI provided support based on the prompt:
 
