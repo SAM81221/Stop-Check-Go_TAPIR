@@ -129,54 +129,20 @@ bracken_parse_df <- function(bracken_combined_report){
 
 # Function to import biom files using a default taxonomy parsing function
 # Define your import function
+
+B. import_biom_data
+
 import_biom_data <- function(data_input) {
   import_biom(data_input, parseFunction = parse_taxonomy_default)
 }
 
 
 # Function to process biom data and add metadata columns
+
+C. process_biom_data
 process_biom_data <- function(data) {
   # Predefined list of sample names considered as microbiologically negative 
  
-  # negative <- c("T053-2-A", "T053-2-B", "T061-3-A", "T065-4-A", "T071-5-A", "T071-5-N", "T072-5-A", 
-  #               "T072-6-B", "T074-6-A", "T078-6-A", "T084-8-A", "T084-8-B", "T088-9-A", "T089-9-A", 
-  #               "T089-9-N", "T090-9-A", "T090-9-B", "T091-9-A", "T092-9-A", "T092-9-B", "T097-10-A", 
-  #               "T099-10-A", "T103-11-A", "T112-14-A", "T112-14-B", "T116-14-A", "T116-14-B", "T117-14-A", 
-  #               "T117-14-N", "T120-15-A", "T120-15-B", "T126-16-A", "T127-16-A", "T129-16-A", "T130-16-A", 
-  #               "T130-16-B", "T131-17-A", "T131-17-B", "T132-17-A", "T137-17-A", "T138-17-A", "T138-17-B", 
-  #               "T143-18-A", "T144-18-B", "T146-18-B", "T147-19-A", "T147-19-B", "T149-20-B", "T152-21-A", 
-  #               "T152-21-N", "T155-21-A", "T158-22-A", "T158-22-B", "T159-22-A", "T159-22-B", "T160-22-A", 
-  #               "T160-22-B", "T167-23-B", "T168-23-A", "T168-23-N", "T169-23-A", "T169-23-B", "T153-24-A", 
-  #               "T153-24-B", "T155-24-A", "T170-24-A", "T171-24-A", "T174-24-A", "T153-25-A", "T187-27-B", 
-  #               "T189-27-A", "T189-27-N", "T190-27-A", "T191-27-A", "T191-27-B", "T192-27-A", "T193-27-A", 
-  #               "T193-27-B", "T196-27-A", "T196-27-B", "T198-27-A", "T198-27-B", "T203-29-A", "T205-29-A", 
-  #               "T206-29-A", "T206-29-B", "T208-29-A", "T210-29-A", "T210-29-N", "T213-30-A", "T213-30-B", 
-  #               "T215-30-A", "T216-30-B", "T213-31-B", "T216-31-A", "T217-31-A", "T218-31-A", "T218-31-B", 
-  #               "T219-31-B", "T213-32-N", "T224-32-A", "T224-32-B", "T228-32-N", "T229-32-A", "T229-32-B", 
-  #               "T233-34-N", "T235-34-N", "T238-35-A", "T238-35-B", "T244-36-A", "T244-36-B", "T244-37-A", 
-  #               "T244-37-B", "T247-37-A", "T247-37-B", "T244-38-A", "T259-39-A", "T259-39-B", "T262-39-A", 
-  #               "T262-39-N", "T266-40-A", "T268-40-A", "T269-40-A", "T270-41-A", "T270-41-B", "T271-41-A", 
-  #               "T273-41-A", "T273-41-B", "T275-41-A", "T275-41-N", "T278-42-A", "T280-42-A", "T280-42-B", 
-  #               "T286-43-A", "T294-45-A", "T294-45-N", "T295-45-A", "T295-45-B", "T299-46-A", "T299-46-B", 
-  #               "T300-46-A", "T300-46-B", "T259-47-B", "T303-47-A", "T305-47-A", "T312-48-A", "T315-49-A", 
-  #               "T315-49-B", "T316-49-A", "T316-49-B", "T319-50-A", "T320-50-A", "T320-50-B", "T321-50-A", 
-  #               "T323-51-A", "T323-51-B", "T324-51-A", "T324-51-B", "T336-1-A", "T336-1-B", "T339-2-A", 
-  #               "T339-2-B", "T340-2-A", "T340-2-B", "T342-3-B", "T346-3-A", "T346-3-B", "T347-3-A", "T347-3-B", 
-  #               "T294-4-A", "T354-4-A", "T355-4-A", "T355-4-B", "Swab-3", "Water-3", "Swab-5", "Water-5", 
-  #               "Swab-6", "Water-6", "Swab-7", "Water-7","Swab-8", "Water-8", "Swab-9", "Water-9", "Swab-10", 
-  #               "Water-10", "Swab-11", "Water-11", "Swab-13", "Water-14", "Swab-17", "Water-17", "Swab-18", 
-  #               "Water-18", "Swab-19", "Water-19", 
-  #               "Swab-21", "Water-21", "Swab-22", "Water-22", "Swab-23", "Water-23", "Swab-24", "Water-24", 
-  #               "Swab-25", "Water-25", "Swab-26", "Water-26", "Swab-27", "Water-27", "Swab-28", "Water-28", 
-  #               "Swab-29", "Swab-30", "Water-30", "Swab-31", "Water-31", "Swab-32", "Water-32", "Swab-33", 
-  #               "Water-33", "Swab-34", "Water-34", "Swab-35", "Water-35", "Swab-36", "Water-36", "Swab-37", 
-  #               "Water-37", "Swab-38", "Water-38", "Swab-39", "Water-39", "Swab-40", "Water-40", "Swab-41", 
-  #               "Water-41", "Swab-42", "Water-42", "Swab-43", "Swab-44", "Water-44", "Swab-45", 
-  #               "Water-45", "Swab-46", "Water-46", "Swab-47", "Water-47", "Swab-49", "Water-49", "Swab-50", 
-  #               "Water-50", "Swab-51", "Water-51", "Swab-52", "Water-52", "Swab-53", "Water-53", "Swab-54", 
-  #               "Water-54", "Swab-55", "Water-55", "Swab-56", "Water-56", "Swab-57", "Water-57", "Swab-58", 
-  #               "Water-58", "Swab-59", "Water-59", "Swab-60", "Water-60", "Swab-61", "Water-61", "Swab-62", 
-  #               "Water-62")
   
   if (!is.character(negative_list)) {
     stop("❌ 'negative' must be character")
@@ -232,38 +198,13 @@ process_biom_data <- function(data) {
     )
 }
 
-# Loop through all weeks and process the biom data objects
-# for (week in names(biom_list)) {
-#   # Format week number with two digits (e.g., "06", "11")
-#   #week_str <- sprintf("%02d", week)
-#   
-#   # Construct input and output variable names dynamically
-#  # input_name <- paste0("w", week_str, "_biom")
-#   output_name <- paste0("w", week_str, "_biom_m")
-#   
-#   # Check if the input object exists before processing
-#   if (exists(input_name)) {
-#     processed <- process_biom_data(get(input_name))  # Process the biom data
-#     assign(output_name, processed)  # Save the result to a new object
-#   } else {
-#     print(paste("The object was not found:", input_name))  # Notify if the input doesn't exist
-#   }
-# }
-# 
-
-
- 
-
-# Load the main input file containing sample contamination conditions
-#red_plus_conditions_in_check <- read_excel("red_plus_conditions_in_check_250409.xlsx")
-
-
-##### B. Create green dataset 
 
 # List of weeks to be processed
 #weeks_to_process <- c(6, 11, 20, 26, 27, 29, 34, 39, 41, 43, 50, 52)
 
 #weeks_to_process <- as.numeric(stringr::str_extract(list_biom_processed, "\\d{2}"))
+
+# D. create_go_dataset 
 
 # Function that generates a dataset for a single week
 create_go_dataset <- function(week_number) {
@@ -289,7 +230,7 @@ create_go_dataset <- function(week_number) {
 }
 
 
-## D. assign_zero_to_positions
+# E. assign_zero_to_positions
 
 assign_zero_to_positions <- function(df, otu_matrix) {
   # Loop through each row of the data frame
@@ -307,29 +248,5 @@ assign_zero_to_positions <- function(df, otu_matrix) {
   # Return the modified otu_matrix
   return(otu_matrix)
 }
-    ##
-    
-#     
-#     # Modify OTU matrix
-#     otu_matrix_modified <- assign_zero_to_positions(df, otu_matrix)
-#     otu_table_modified <- otu_table(otu_matrix_modified, taxa_are_rows = TRUE)
-#     
-#     # Create new phyloseq object
-#     biom_green <- phyloseq(
-#       otu_table_modified,
-#       sample_data(biom_obj),
-#       tax_table(biom_obj)
-#     )
-#     
-#     # Save to global environment and RDS
-#     assign(output_name, biom_green, envir = .GlobalEnv)
-#     output_file <- file.path(output_path$biom_go_folder, paste0(output_name, ".rds"))
-#     saveRDS(biom_green, output_file)
-#     
-#     message(paste("✔ Week", week_str, "processed and saved as", output_name))
-#     
-#   } else {
-#     warning(paste("❌ Missing objects for week", week_str, ":", paste(missing, collapse = ", ")))
-#   }
-# }
+  
 
