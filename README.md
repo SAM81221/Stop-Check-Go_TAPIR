@@ -5,10 +5,12 @@
 
 **License Notice**
 
-This code is part of an unpublished manuscript and is currently under
-embargo.
-Please do not redistribute. The code will be made publicly available
-upon article publication.
+
+This repository is provided for transparency and academic review.  
+It is **not licensed for reuse or redistribution** at this time.  
+Please contact stefany.ayala.montano@uniklinik-freiburg.de for questions
+or collaboration.
+
 
 ## Description
 
